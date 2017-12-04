@@ -4,22 +4,28 @@ import Weather from './Weather';
 
 export default class App extends Component {
   state = {
-    isLoaded: true
+    isLoaded: false
   }
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        this.setState({
+            isLoaded: true
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   render() {
     const { isLoaded } = this.state;
-    return (
-      <View style={styles.container}>
-      <StatusBar hidden={true} />
-        {isLoaded ? (
-          <Weather /> 
-        ) : (
-          <View style={styles.loading}>
-            <Text style={styles.loadingText}>Getting the fucking weather</Text>
-          </View>
-        )}
-      </View>
-    );
+    return <View style={styles.container}>
+        <StatusBar hidden={true} />
+        {isLoaded ? <Weather /> : <View style={styles.loading}>
+            <ActivityIndicator size='large' color='red' />
+          </View>}
+      </View>;
   }
 }
 
@@ -31,12 +37,7 @@ const styles = StyleSheet.create({
   loading: {
     flex: 1,
     backgroundColor: "#FDF6AA",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "center",
-    paddingLeft: 25
-  },
-  loadingText: {
-    fontSize: 38,
-    marginBottom: 100
   }
 });
