@@ -40,13 +40,19 @@ export default class App extends Component {
 
   render() {
     const { isLoaded, error, temperature, name } = this.state;
-    return <View style={styles.container}>
+    return (
+      <View style={styles.container}>
         <StatusBar hidden={true} />
-        {isLoaded ? <Weather weatherName={name} temp={Math.floor(temperature - 273.15)}/> : <View style={styles.loading}>
+        {isLoaded ? (
+          <Weather weatherName={name} temp={Math.ceil(temperature - 273.15)}/> 
+        ) : (
+          <View style={styles.loading}>
             <ActivityIndicator size='large' color='red' />
             {error ? <Text style={ styles.errorText }>{ error }</Text> : null}
-          </View>}
-      </View>;
+          </View>
+        )}
+      </View>
+    );
   }
 }
 
