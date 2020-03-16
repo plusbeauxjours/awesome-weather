@@ -2,8 +2,9 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
-    "expo": "^23.0.0",
-    "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "expo": "^36.0.2",
+    "react": "^16.13.0",
+    "react-native": "^0.61.5"
   }
 }
