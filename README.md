@@ -1,1 +1,1 @@
-# fucking-weather
+# fukin-weather

@@ -3,13 +3,13 @@
     "packagerOpts": {
       "nonPersistent": false
     },
-    "name": "fucking-weather",
+    "name": "fukin-weather",
     "description": "An empty new project",
-    "slug": "fucking-weather",
+    "slug": "fukin-weather",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "icon": "./assets/icon.png",
@@ -20,10 +20,17 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "fukinWeather.plusbeauxjours"
+      "bundleIdentifier": "fukinWeather.plusbeauxjours",
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "FukinWeather uses your location for features like getting weather.",
+        "NSLocationWhenInUseUsageDescription": "FukinWeather uses your location for features like getting weather."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyDv66JZo6YNvVnnQu_x65TK_ik2EF_vCcQ"
+      }
     },
     "android": {
-      "versionCode": 2,
+      "versionCode": 3,
       "package": "fukinweather.plusbeauxjours",
       "permissions": [
         "ACCESS_COARSE_LOCATION",

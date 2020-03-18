@@ -58,7 +58,7 @@ export default class App extends Component {
         ) : (
           <View style={styles.loading}>
             <Text style={styles.loadingText} i>
-              Getting the fucking weather.....
+              Getting the fukin weather.....
             </Text>
             {error ? <Text style={styles.errorText}>{error}</Text> : null}
           </View>
