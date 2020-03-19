@@ -4,6 +4,7 @@
   "dependencies": {
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
     "expo": "^36.0.2",
+    "expo-intent-launcher": "^8.0.0",
     "react": "^16.13.0",
     "react-native": "^0.61.5"
   }
