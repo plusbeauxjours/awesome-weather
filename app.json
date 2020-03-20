@@ -31,7 +31,7 @@
     },
     "android": {
       "versionCode": 3,
-      "package": "fukinweather.plusbeauxjours",
+      "package": "awesomeWeather.plusbeauxjours",
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
