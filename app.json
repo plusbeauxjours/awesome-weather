@@ -20,7 +20,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "awesomeWeather.plusbeauxjours",
+      "bundleIdentifier": "fukinWeather.plusbeauxjours",
       "infoPlist": {
         "NSLocationAlwaysAndWhenInUseUsageDescription": "FukinWeather uses your location for features like getting weather.",
         "NSLocationWhenInUseUsageDescription": "FukinWeather uses your location for features like getting weather."
