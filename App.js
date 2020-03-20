@@ -39,6 +39,9 @@ export default class App extends Component {
       }
     );
   }
+  componentDidUpdate() {
+    console.log("jifjiji");
+  }
   _getWeather = (lat, long) => {
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${API_KEY}`
@@ -55,73 +58,63 @@ export default class App extends Component {
 
   render() {
     const { isLoaded, error, temperature, name, lat, long } = this.state;
-    if (lat && long && !loading) {
-      return (
-        <View style={styles.container}>
-          <StatusBar hidden={true} />
-          {isLoaded ? (
-            <>
-              <Weather
-                weatherName={name}
-                temp={Math.ceil(temperature - 273.15)}
-              />
-            </>
-          ) : (
+    return (
+      <View style={styles.container}>
+        <StatusBar hidden={true} />
+        {isLoaded ? (
+          <>
+            <Weather
+              weatherName={name}
+              temp={Math.ceil(temperature - 273.15)}
+            />
+          </>
+        ) : (
+          <View style={styles.container}>
+            <StatusBar hidden={true} />
             <View style={styles.loading}>
-              <Text style={styles.loadingText} i>
-                Getting the fukin weather.....
-              </Text>
-              {error ? <Text style={styles.errorText}>{error}</Text> : null}
+              {Platform.OS === "ios" ? (
+                <>
+                  <Text>
+                    To enable location, tap Open Settings, then tap on Location,
+                    and finally tap on While Using the App.
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => Linking.openURL("app-settings:")}
+                  >
+                    <Text>SETTINGS</Text>
+                  </TouchableOpacity>
+                </>
+              ) : (
+                <>
+                  <Text>
+                    To enable location, tap Open Settings, then tap on
+                    Permissions, then tap on Location, and finally tap on Allow
+                    only while using the app.
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => {
+                      const pkg = Constants.manifest.releaseChannel
+                        ? Constants.manifest.android.package
+                        : "host.exp.exponent";
+                      IntentLauncher.startActivityAsync(
+                        IntentLauncher.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        { data: "package:" + pkg }
+                      ),
+                        setLoading(false);
+                    }}
+                  >
+                    <Text>SETTINGS</Text>
+                  </TouchableOpacity>
+                  {error ? <Text style={styles.errorText}>{error}</Text> : null}
+                </>
+              )}
             </View>
-          )}
-        </View>
-      );
-    } else {
-      return (
-        <View style={styles.container}>
-          <StatusBar hidden={true} />
-          <View style={styles.loading}>
-            {Platform.OS === "ios" ? (
-              <>
-                <Text>
-                  To enable location, tap Open Settings, then tap on Location,
-                  and finally tap on While Using the App.
-                </Text>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => Linking.openURL("app-settings:")}
-                >
-                  <Text>SETTINGS</Text>
-                </TouchableOpacity>
-              </>
-            ) : (
-              <>
-                <Text>
-                  To enable location, tap Open Settings, then tap on
-                  Permissions, then tap on Location, and finally tap on Allow
-                  only while using the app.
-                </Text>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => {
-                    const pkg = Constants.manifest.releaseChannel
-                      ? Constants.manifest.android.package
-                      : "host.exp.exponent";
-                    IntentLauncher.startActivityAsync(
-                      IntentLauncher.ACTION_APPLICATION_DETAILS_SETTINGS,
-                      { data: "package:" + pkg }
-                    ),
-                      setLoading(false);
-                  }}
-                >
-                  <Text>SETTINGS</Text>
-                </TouchableOpacity>
-              </>
-            )}
           </View>
-        </View>
-      );
-    }
+        )}
+      </View>
+    );
   }
 }
 
