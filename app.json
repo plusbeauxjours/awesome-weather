@@ -8,10 +8,13 @@
     "slug": "awesome-weather",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.4",
     "orientation": "portrait",
-    "primaryColor": "#cccccc",
+    "primaryColor": "#FDF6AA",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
