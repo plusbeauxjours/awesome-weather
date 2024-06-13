@@ -10,7 +10,7 @@
 
 ### Portfolio Link
 
-> https://www.plusbeauxjours.com/projects/app/awesome-weather-app
+> https://www.plusbeauxjours.info/projects/app/pewsomeweather
 
 ### Download
 
