@@ -1,4 +1,4 @@
-# AWESOME WEATHER - APP
+# PEWSOME WEATHER - APP
 
 ### Introduction
 
@@ -16,12 +16,12 @@
 
 <span>
 <p align="center" >
-  <img src="https://www.plusbeauxjours.com/static/media/AwesomeWeatherQR_Android.639e3438.jpg" width="200"height="200" >
+  <img src="https://github.com/plusbeauxjours/next-plusbeauxjours/blob/main/public/images/app/pewsome/pewsome_android.jpg" width="200"height="200" >
   <br>
   <em>Android</em>
   </p>
   <p align="center" >
-  <img src="https://www.plusbeauxjours.com/static/media/AwesomeWeatherQR_IOS.487a6125.jpg" width="200"height="200" >
+  <img src="https://github.com/plusbeauxjours/next-plusbeauxjours/blob/main/public/images/app/pewsome/pewsome_ios.jpg" width="200"height="200" >
   <br>
   <em>IOS</em>
 </p>
