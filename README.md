@@ -1,4 +1,4 @@
-# PEWSOME WEATHER - APP
+# AEWSOME WEATHER - APP
 
 ### Introduction
 
@@ -10,7 +10,7 @@
 
 ### Portfolio Link
 
-> https://www.plusbeauxjours.info/projects/app/pewsomeweather
+> https://www.plusbeauxjours.info/projects/0/app/aewsomeweather
 
 ### Download
 
